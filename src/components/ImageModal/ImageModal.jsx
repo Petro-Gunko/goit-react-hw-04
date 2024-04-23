@@ -10,11 +10,11 @@ export default function ImageModal({ isOpen, dataImage, closeModal }) {
       className={css.modalContainer}
       isOpen={isOpen}
       onRequestClose={closeModal}
-      //   style={{
-      //     overlay: {
-      //       backgroundColor: "rgba(0, 0, 0, 0.8)",
-      //     },
-      //   }}
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+          },
+        }}
     >
       <div className={css.container}>
         {dataImage && (

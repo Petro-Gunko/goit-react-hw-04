@@ -1,7 +1,8 @@
 .modalContainer{
-    margin: auto;
-    width: 400px;
     
+    margin: 100px auto;
+    width: 400px;
+    background-color: "rgba(0, 0, 0, 0.8)";
 }
 .container {
      
