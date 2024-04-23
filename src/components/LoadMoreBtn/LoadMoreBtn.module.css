@@ -1,0 +1,6 @@
+.container{
+    width: 300px;
+    background-color: aqua;
+    color: hwb(295 0% 25%);
+    font-size: 24px;
+}
