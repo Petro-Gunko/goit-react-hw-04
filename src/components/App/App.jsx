@@ -59,6 +59,8 @@ export default function App() {
         setError(false);
         setLoading(true);
         const data = await fetchImages(query, page);
+
+        
         setImages((prevImages) => [...prevImages, ...data]);
       } catch (error) {
         setError(true);
@@ -66,20 +68,20 @@ export default function App() {
         setLoading(false);
       }
     }
-
     getImages();
   }, [query, page]);
 
   return (
     <div className={css.container}>
-      <SearchForm onSearch={handleSearch} />
+      <SearchForm onSubmit={handleSearch} />
       {error && <ErrorMessage />}
       {loading && <Loading />}
       {images.length > 0 && (
         <ImageGallery onClickImage={handleImageClick} items={images} />
       )}
-      {images.length > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
-
+      {images.length > 0 && !loading && (
+        <LoadMoreBtn onClick={handleLoadMore} />
+      )}
       <ImageModal
         dataImage={selectedImage}
         isOpen={modalIsOpen}
